@@ -1,0 +1,17 @@
+<h2>List</h2>
+<div class='row'>
+  {{#each model as |library|}}
+    <div class='col-md-4'>
+      <LibraryItem @item={{library}}>
+        <LinkTo
+          class='btn btn-success btn-xs'
+          @route='libraries.edit'
+          @model={{library.id}}
+        >Edit</LinkTo>
+        <button
+          class='btn btn-danger btn-xs' type="button" {{action 'deleteLibrary' library}}
+        >Delete</button>
+      </LibraryItem>
+    </div>
+  {{/each}}
+</div>

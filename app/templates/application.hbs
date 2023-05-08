@@ -1,7 +1,61 @@
-{{page-title "LibraryApp"}}
+{{page-title 'LibraryApp'}}
+<div class='container'>
 
-{{!-- The following component displays Ember's default welcome message. --}}
-<WelcomePage />
-{{!-- Feel free to remove this! --}}
+  <nav class='navbar navbar-dark navbar-expand-lg bg-dark'>
+    <div class='container-fluid d-flex'>
+      <div class='navbar-header'>
+        <LinkTo class='navbar-brand' @route='index'>Library App</LinkTo>
+      </div>
 
-{{outlet}}
+      <div class='collapse navbar-collapse' id='main-navbar'>
+        <ul class='nav navbar-nav'>
+          <li class='nav-item'>
+            <LinkTo class='nav-link' @route='index'>Home</LinkTo>
+          </li>
+          <li class='nav-item'>
+            <LinkTo class='nav-link' @route='libraries'>Libraries</LinkTo>
+          </li>
+          <li class='nav-item'>
+            <LinkTo class='nav-link' @route='authors'>Authors</LinkTo>
+          </li>
+          <li class='nav-item'>
+            <LinkTo class='nav-link' @route='books'>Books</LinkTo>
+          </li>
+        </ul>
+        <ul class='nav navbar-nav ml-auto'>
+          <li class='nav-item'>
+            <LinkTo class='nav-link' @route='about'>About</LinkTo>
+          </li>
+          <li class='nav-item'>
+            <LinkTo class='nav-link' @route='contact'>Contact</LinkTo>
+          </li>
+          <li class='nav-item dropdown'>
+            <a
+              class='nav-link dropdown-toggle'
+              data-toggle='dropdown'
+              role='button'
+              aria-haspopup='true'
+              href=''
+            >Admin</a>
+            <ul class='dropdown-menu dropdown-menu-right'>
+              <LinkTo
+                class='dropdown-item'
+                @route='admin.invitations'
+              >Invitations</LinkTo>
+              <LinkTo
+                class='dropdown-item'
+                @route='admin.contacts'
+              >Contacts</LinkTo>
+              <LinkTo
+                class='dropdown-item'
+                @route='admin.seeder'
+              >Seeder</LinkTo>
+            </ul>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  {{outlet}}
+</div>

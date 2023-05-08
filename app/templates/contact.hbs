@@ -1,0 +1,33 @@
+{{page-title 'Contact'}}
+
+<form>
+  <div class='form-group'>
+    <label for='exampleInputEmail1'>Email address</label>
+    <Input
+      @type='email'
+      class='form-control'
+      id='exampleInputEmail1'
+      @value={{this.email}}
+    />
+  </div>
+
+  <div class='form-group'>
+    <label for='exampleInputText1'>Your message*:</label>
+    <Textarea
+      class='form-control'
+      placeholder='Your message. (At least 5 characters.)'
+      id='exampleInputText1'
+      rows='5'
+      @value={{this.message}}
+    />
+  </div>
+
+  <button
+    type='submit'
+    class='btn btn-success'
+    disabled={{this.isDisabled}}
+    {{on 'submit' this.sendMessage}}
+  >Submit</button>
+
+</form>
+{{outlet}}
